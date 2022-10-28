@@ -3,12 +3,10 @@ package liga.medical.personservice.core.model;
 import lombok.Data;
 import org.springframework.data.annotation.Id;
 
-import java.math.BigInteger;
-
 @Data
 public class Contact {
     @Id
-    private BigInteger id;
+    private long id;
 
     private String phoneNumber;
 
@@ -16,7 +14,7 @@ public class Contact {
 
     private String profileLink;
 
-    public BigInteger getId() {
+    public long getId() {
         return id;
     }
 
@@ -32,7 +30,7 @@ public class Contact {
         return this.profileLink;
     }
 
-    public void setId(BigInteger id) {
+    public void setId(long id) {
         this.id = id;
     }
 

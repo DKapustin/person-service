@@ -3,23 +3,22 @@ package liga.medical.personservice.core.model;
 import lombok.Data;
 import org.springframework.data.annotation.Id;
 
-import java.math.BigInteger;
 import java.sql.Date;
 
 @Data
 public class PersonData {
     @Id
-    private BigInteger id;
+    private long id;
     private String lastName;
     private String firstName;
     private Date birthDt;
     private int age;
     private char sex;
-    private Contact contactId;
-    private MedicalCard medicalCardId;
-    private PersonData parentId;
+    private long contactId;
+    private long medicalCardId;
+    private long parentId;
 
-    public BigInteger getId() {
+    public long getId() {
         return this.id;
     }
 
@@ -43,19 +42,19 @@ public class PersonData {
         return this.sex;
     }
 
-    public Contact getContactId() {
+    public long getContactId() {
         return this.contactId;
     }
 
-    public MedicalCard getMedicalCardId() {
+    public long getMedicalCardId() {
         return this.medicalCardId;
     }
 
-    public PersonData getParentId() {
+    public long getParentId() {
         return this.parentId;
     }
 
-    public void setId(BigInteger id) {
+    public void setId(long id) {
         this.id = id;
     }
 
@@ -79,15 +78,15 @@ public class PersonData {
         this.sex = sex;
     }
 
-    public void setContactId(Contact contactId) {
+    public void setContactId(long contactId) {
         this.contactId = contactId;
     }
 
-    public void setMedicalCardId(MedicalCard medicalCardId) {
+    public void setMedicalCardId(long medicalCardId) {
         this.medicalCardId = medicalCardId;
     }
 
-    public void setParentId(PersonData parentId) {
+    public void setParentId(long parentId) {
         this.parentId = parentId;
     }
 }

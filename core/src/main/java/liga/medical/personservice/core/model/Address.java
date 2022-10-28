@@ -3,17 +3,14 @@ package liga.medical.personservice.core.model;
 import lombok.Data;
 import org.springframework.data.annotation.Id;
 
-import java.math.BigInteger;
-
-
 @Data
 public class Address {
     @Id
-    private BigInteger id;
+    private long id;
 
-    private Contact contactId;
+    private long contactId;
 
-    private BigInteger countryId;
+    private long countryId;
 
     private String city;
 
@@ -25,15 +22,15 @@ public class Address {
 
     private String flat;
 
-    public BigInteger getId() {
+    public long getId() {
         return this.id;
     }
 
-    public Contact getContactId() {
+    public long getContactId() {
         return this.contactId;
     }
 
-    public BigInteger getCountryId() {
+    public long getCountryId() {
         return this.countryId;
     }
 
@@ -57,15 +54,15 @@ public class Address {
         return this.flat;
     }
 
-    public void setId(BigInteger id) {
+    public void setId(long id) {
         this.id = id;
     }
 
-    public void setContactId(Contact contactId) {
+    public void setContactId(long contactId) {
         this.contactId = contactId;
     }
 
-    public void setCountryId(BigInteger countryId) {
+    public void setCountryId(long countryId) {
         this.countryId = countryId;
     }
 

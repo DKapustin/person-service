@@ -1,0 +1,5 @@
+DROP TABLE address CASCADE;
+DROP TABLE contact CASCADE;
+DROP TABLE illness CASCADE;
+DROP TABLE medical_card CASCADE;
+DROP TABLE person_data CASCADE;

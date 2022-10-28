@@ -3,30 +3,28 @@ package liga.medical.personservice.core.model;
 import lombok.Data;
 import org.springframework.data.annotation.Id;
 
-
-import java.math.BigInteger;
 import java.sql.Date;
 import java.sql.Time;
 
 @Data
 public class Illness {
     @Id
-    private BigInteger id;
-    private MedicalCard medicalCardId;
-    private BigInteger typeId;
+    private long id;
+    private long medicalCardId;
+    private long typeId;
     private char heaviness;
     private Time appearanceDttm;
     private Date recoveryDt;
 
-    public BigInteger getId() {
+    public long getId() {
         return this.id;
     }
 
-    public MedicalCard getMedicalCardId() {
+    public long getMedicalCardId() {
         return this.medicalCardId;
     }
 
-    public BigInteger getTypeId() {
+    public long getTypeId() {
         return this.typeId;
     }
 
@@ -42,15 +40,15 @@ public class Illness {
         return this.recoveryDt;
     }
 
-    public void setId(BigInteger id) {
+    public void setId(long id) {
         this.id = id;
     }
 
-    public void setMedicalCardId(MedicalCard medicalCardId) {
+    public void setMedicalCardId(long medicalCardId) {
         this.medicalCardId = medicalCardId;
     }
 
-    public void setTypeId(BigInteger typeId) {
+    public void setTypeId(long typeId) {
         this.typeId = typeId;
     }
 
