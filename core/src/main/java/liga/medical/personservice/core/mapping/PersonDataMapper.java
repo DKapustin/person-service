@@ -21,7 +21,7 @@ public interface PersonDataMapper {
             "FROM person_data WHERE id = #{personDataId};")
     PersonData getPersonDataById(@Param("personDataId") long personDataId);
 
-    @Insert("INSERT INTO person_data () " +
+    @Insert("INSERT INTO person_data " +
             "VALUES (#{id}, #{lastName}, #{firstName}, #{birthDt}, #{age}, #{sex}, #{contactId}, #{medicalCardId}, #{parentId});")
     int addPersonData(PersonData personData);
 }
