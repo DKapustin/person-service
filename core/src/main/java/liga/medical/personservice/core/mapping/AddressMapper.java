@@ -12,14 +12,14 @@ import java.util.List;
 public interface AddressMapper {
 
     @Select ("SELECT id, contact_id as contactId, country_id as countryId, city, index, street, building, flat " +
-            "FROM address;")
+            "FROM medical.address")
     List<Address> getAllAddress();
 
     @Select ("SELECT id, contact_id as contactId, country_id as countryId, city, index, street, building, flat " +
-            "FROM address WHERE id = #{addressId}")
+            "FROM medical.address WHERE id = #{addressId}")
     Address getAddressById(@Param("addressId") long addressId);
 
-    @Insert ("INSERT INTO address (id, contact_id, country_id, city, index, street, building, flat) " +
+    @Insert ("INSERT INTO medical.address (id, contact_id, country_id, city, index, street, building, flat) " +
             "VALUES (#{id}, #{contactId}, #{countryId}, #{city}, #{index}, #{street}, #{building}, #{flat})")
     int addAddress(Address address);
 

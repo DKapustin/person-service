@@ -13,15 +13,15 @@ public interface PersonDataMapper {
 
     @Select("SELECT id, last_name as lastName, first_name as firstName, birth_dt as birthDt, age, sex, " +
             "contact_id as contactId, medical_card_id as medicalCardId, parent_id as parentId " +
-            "FROM person_data;")
+            "FROM medical.person_data")
     List<PersonData> getAllPersonData();
 
     @Select("SELECT id, last_name as lastName, first_name as firstName, birth_dt as birthDt, age, sex," +
             " contact_id as contactId, medical_card_id as medicalCardId, parent_id as parentId " +
-            "FROM person_data WHERE id = #{personDataId};")
+            "FROM medical.person_data WHERE id = #{personDataId}")
     PersonData getPersonDataById(@Param("personDataId") long personDataId);
 
-    @Insert("INSERT INTO person_data " +
-            "VALUES (#{id}, #{lastName}, #{firstName}, #{birthDt}, #{age}, #{sex}, #{contactId}, #{medicalCardId}, #{parentId});")
+    @Insert("INSERT INTO medical.person_data " +
+            "VALUES (#{id}, #{lastName}, #{firstName}, #{birthDt}, #{age}, #{sex}, #{contactId}, #{medicalCardId}, #{parentId})")
     int addPersonData(PersonData personData);
 }

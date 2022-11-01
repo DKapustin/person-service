@@ -7,14 +7,14 @@
     <changeSet author="DKapustin" id="6">
 
         <sql>
-            INSERT INTO role VALUES (1, 'ADMIN');
-            INSERT INTO role VALUES (2, 'USER');
+            INSERT INTO medical.role VALUES (1, 'ADMIN');
+            INSERT INTO medical.role VALUES (2, 'USER');
 
-            INSERT INTO user (login, password) VALUES ('admin', '$2a$13$xKyJzVysx2mXNi/Uyh0ns.nQLunQAKg0XeAT1giE7kUEmM5dQpuLC');
-            INSERT INTO user (login, password) VALUES ('user', '$2a$13$fATAZEwD24NuLPUiZyrhFOWp69xaDmyLGMloffd1rkDT/qc1dj3ay');
+            INSERT INTO medical.user (login, password) VALUES ('admin', '$2a$13$xKyJzVysx2mXNi/Uyh0ns.nQLunQAKg0XeAT1giE7kUEmM5dQpuLC');
+            INSERT INTO medical.user (login, password) VALUES ('user', '$2a$13$fATAZEwD24NuLPUiZyrhFOWp69xaDmyLGMloffd1rkDT/qc1dj3ay');
 
-            INSERT INTO user_role VALUES (1 , 1);
-            INSERT INTO user_role VALUES (2 , 2);
+            INSERT INTO medical.user_role VALUES (1 , 1);
+            INSERT INTO medical.user_role VALUES (2 , 2);
         </sql>
 
     </changeSet>

@@ -10,9 +10,9 @@ import java.util.List;
 @Mapper
 public interface RoleMapper {
 
-    @Select("SELECT * FROM role")
+    @Select("SELECT * FROM medical.role")
     List<Role> getAllRole();
 
-    @Select("SELECT * FROM role WHERE name = #{name}")
+    @Select("SELECT * FROM medical.role WHERE name = #{name}")
     Role getRoleByName(@Param("name") String name);
 }

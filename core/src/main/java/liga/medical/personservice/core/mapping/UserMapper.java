@@ -13,20 +13,18 @@ import java.util.Set;
 @Mapper
 public interface UserMapper {
 
-    @Select("SELECT * FROM user;")
+    @Select("SELECT * FROM medical.user")
     List<User> getAllUser();
 
-    @Select("SELECT * WHERE login = #{login} " +
-            "FROM user;")
+    @Select("SELECT * FROM medical.user WHERE login = #{login}")
     User getUserByLogin(@Param("login") String login);
 
-    @Select("SELECT * WHERE id = #{userId} " +
-            "FROM user;")
+    @Select("SELECT * FROM medical.user WHERE id = #{userId}")
     User getUserById(@Param("userId") long userId);
 
-    @Insert("INSERT INTO user VALUES (#{id}, #{login}, #{password})")
+    @Insert("INSERT INTO medical.user VALUES (#{id}, #{login}, #{password})")
     int addUser(User user);
 
-    @Select("SELECT * FROM role WHERE id IN (SELECT role_id FROM user_role WHERE user_id = #{userId})")
+    @Select("SELECT * FROM medical.role WHERE id IN (SELECT role_id FROM medical.user_role WHERE user_id = #{userId})")
     Set<Role> getUserRoles(@Param("userId") long userId);
 }

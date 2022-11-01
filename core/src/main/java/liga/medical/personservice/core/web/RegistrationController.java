@@ -2,11 +2,13 @@ package liga.medical.personservice.core.web;
 
 import liga.medical.personservice.core.model.User;
 import liga.medical.personservice.core.service.UserService;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
+@Controller
 public class RegistrationController {
     private UserValidator userValidator;
 

@@ -2,7 +2,9 @@ package liga.medical.personservice.core.web;
 
 import liga.medical.personservice.core.mapping.UserMapper;
 import liga.medical.personservice.core.model.User;
+import org.springframework.stereotype.Component;
 
+@Component
 public class UserValidator {
     private UserMapper userMapper;
 

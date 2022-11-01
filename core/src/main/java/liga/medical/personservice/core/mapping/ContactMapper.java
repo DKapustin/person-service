@@ -12,14 +12,14 @@ import java.util.List;
 public interface ContactMapper {
 
     @Select("SELECT id, phone_number as phoneNumber, email, profile_link as profileLink " +
-            "FROM contact;")
+            "FROM medical.contact")
     List<Contact> getAllContact();
 
     @Select("SELECT id, phone_number as phoneNumber, email, profile_link as profileLink " +
-            "FROM contact WHERE id = #{contactId}")
+            "FROM medical.contact WHERE id = #{contactId}")
     Contact getContactById(@Param("contactId") long contactId);
 
-    @Insert("INSERT INTO contact (id, phone_number, email, profile_link) " +
+    @Insert("INSERT INTO medical.contact (id, phone_number, email, profile_link) " +
             "VALUES (#{id}, #{phoneNumber}, #{email}, #{profileLink})")
     int addContact(Contact contact);
 }

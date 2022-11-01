@@ -12,14 +12,14 @@ import java.util.List;
 public interface IllnessMapper {
 
     @Select("SELECT id, medical_card_id as medicalCardId, type_id as typeId, heaviness, appearance_dttm as appearanceDttm, recovery_dt as recoveryDt " +
-            "FROM illness;")
+            "FROM medical.illness")
     List<Illness> getAllIllness();
 
     @Select("SELECT id, medical_card_id as medicalCardId, type_id as typeId, heaviness, appearance_dttm as appearanceDttm, recovery_dt as recoveryDt " +
-            "FROM illness WHERE id = #{illnessId}")
+            "FROM medical.illness WHERE id = #{illnessId}")
     Illness getIllnessById(@Param("illnessId") long illnessId);
 
-    @Insert("INSERT INTO illness (id, medical_card_id, type_id, heaviness, appearance_dttm, recovery_dt) " +
+    @Insert("INSERT INTO medical.illness (id, medical_card_id, type_id, heaviness, appearance_dttm, recovery_dt) " +
             "VALUES (#{id}, #{medicalCardId}, #{typeId}, #{heaviness}, #{appearanceDttm}, #{recoveryDt})")
     int addIllness(Illness illness);
 }
