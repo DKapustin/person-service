@@ -7,16 +7,16 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class WebController {
     @GetMapping("/")
     public String mainPage() {
-        return "main_page";
+        return "main";
     }
 
-    @GetMapping("/admin_page")
+    @GetMapping("/admin")
     public String getAdminPage() {
-        return "admin_page";
+        return "admin";
     }
 
-    @GetMapping("/user_page")
+    @GetMapping("/user")
     public String getUserPage() {
-        return "user_page";
+        return "user";
     }
 }

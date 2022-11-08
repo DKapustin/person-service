@@ -13,6 +13,6 @@ public interface UserRoleMapper {
     @Insert("INSERT INTO medical.user_role VALUES (#{userId}, 2)")
     int addOrdinaryUserRole(@Param("userId") long userId);
 
-    @Insert(value = "INSERT INTO medical.users_roles VALUES (#{userId}, #{roleId})")
+    @Insert(value = "INSERT INTO medical.user_role VALUES (#{userId}, #{roleId})")
     int addUserRole(UserRoleDto userRoleDto);
 }

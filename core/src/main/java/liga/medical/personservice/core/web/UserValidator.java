@@ -16,7 +16,7 @@ public class UserValidator {
         if (user.getLogin() == null || user.getPassword() == null) {
             return false;
         }
-        if (user.getLogin().length() < 9 || user.getPassword().length() < 9) {
+        if (user.getLogin().length() < 8 || user.getPassword().length() < 8) {
             return false;
         }
         return true;

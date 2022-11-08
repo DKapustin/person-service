@@ -1,4 +1,4 @@
-package liga.medical.personservice.core.config;
+package liga.medical.personservice.core.security;
 
 import liga.medical.personservice.core.model.Role;
 import liga.medical.personservice.core.model.User;

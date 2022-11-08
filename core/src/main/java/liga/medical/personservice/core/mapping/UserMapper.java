@@ -22,7 +22,7 @@ public interface UserMapper {
     @Select("SELECT * FROM medical.user WHERE id = #{userId}")
     User getUserById(@Param("userId") long userId);
 
-    @Insert("INSERT INTO medical.user VALUES (#{id}, #{login}, #{password})")
+    @Insert("INSERT INTO medical.user (login, password) VALUES ( #{login}, #{password})")
     int addUser(User user);
 
     @Select("SELECT * FROM medical.role WHERE id IN (SELECT role_id FROM medical.user_role WHERE user_id = #{userId})")

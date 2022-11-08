@@ -9,4 +9,5 @@
         <include file="db/0.0.2/4-auth.xml"/>
         <include file="db/0.0.2/5-auth_links.xml"/>
         <include file="db/0.0.2/6-data.xml"/>
+        <include file="db/0.0.3/7-log.xml"/>
 </databaseChangeLog>

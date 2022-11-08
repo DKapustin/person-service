@@ -59,6 +59,7 @@ public class UserService {
     public UserDetails loadUserByUsername(String username) {
         User user = userMapper.getUserByLogin(username);
         if (user == null) {
+            //System.out.println("null user");
             throw new UsernameNotFoundException(username);
         }
 
