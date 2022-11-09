@@ -25,4 +25,6 @@ public class PersonDataService {
     public int addPersonData(PersonData personData) {
         return personDataMapper.addPersonData(personData);
     }
+
+    public void deletePersonDataById(long id){ personDataMapper.deletePersonDataById(id);}
 }

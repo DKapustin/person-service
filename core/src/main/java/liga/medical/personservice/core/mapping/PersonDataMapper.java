@@ -1,10 +1,7 @@
 package liga.medical.personservice.core.mapping;
 
 import liga.medical.personservice.core.model.PersonData;
-import org.apache.ibatis.annotations.Insert;
-import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Param;
-import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.*;
 
 import java.util.List;
 
@@ -24,4 +21,7 @@ public interface PersonDataMapper {
     @Insert("INSERT INTO medical.person_data " +
             "VALUES (#{id}, #{lastName}, #{firstName}, #{birthDt}, #{age}, #{sex}, #{contactId}, #{medicalCardId}, #{parentId})")
     int addPersonData(PersonData personData);
+
+    @Delete("DELETE FROM medical.person_data WHERE id = #{personDataId}")
+    void deletePersonDataById(@Param("personDataId") long personDataId);
 }

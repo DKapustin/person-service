@@ -26,4 +26,6 @@ public class ContactService {
     public int addContact(Contact contact) {
         return contactMapper.addContact(contact);
     }
+
+    public void deleteContractById(long id){ contactMapper.deleteContactById(id);}
 }

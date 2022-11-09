@@ -1,10 +1,7 @@
 package liga.medical.personservice.core.mapping;
 
 import liga.medical.personservice.core.model.Address;
-import org.apache.ibatis.annotations.Insert;
-import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Param;
-import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.*;
 
 import java.util.List;
 
@@ -22,5 +19,8 @@ public interface AddressMapper {
     @Insert ("INSERT INTO medical.address (id, contact_id, country_id, city, index, street, building, flat) " +
             "VALUES (#{id}, #{contactId}, #{countryId}, #{city}, #{index}, #{street}, #{building}, #{flat})")
     int addAddress(Address address);
+
+    @Delete("DELETE FROM medical.address WHERE id = #{addressId}")
+    void deleteAddressById(@Param("addressId") long addressId);
 
 }

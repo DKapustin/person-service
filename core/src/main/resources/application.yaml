@@ -1,0 +1,12 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/medical
+    username: postgres
+    password: kappatych20x1998
+    driver-class-name: org.postgresql.Driver
+    initialization-mode: always
+    schema: classpath:exam/schema.sql
+    data: classpath:exam/data.sql
+  jpa:
+    hibernate:
+      ddl-auto: none

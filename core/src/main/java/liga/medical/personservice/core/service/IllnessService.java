@@ -26,4 +26,6 @@ public class IllnessService {
     public int addIllness(Illness illness) {
         return illnessMapper.addIllness(illness);
     }
+
+    public void deleteIllnessById(long id){ illnessMapper.deleteIllnessById(id);}
 }

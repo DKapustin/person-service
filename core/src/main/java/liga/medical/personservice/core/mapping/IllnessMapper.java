@@ -1,10 +1,7 @@
 package liga.medical.personservice.core.mapping;
 
 import liga.medical.personservice.core.model.Illness;
-import org.apache.ibatis.annotations.Insert;
-import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Param;
-import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.*;
 
 import java.util.List;
 
@@ -22,4 +19,7 @@ public interface IllnessMapper {
     @Insert("INSERT INTO medical.illness (id, medical_card_id, type_id, heaviness, appearance_dttm, recovery_dt) " +
             "VALUES (#{id}, #{medicalCardId}, #{typeId}, #{heaviness}, #{appearanceDttm}, #{recoveryDt})")
     int addIllness(Illness illness);
+
+    @Delete("DELETE FROM medical.illness WHERE id = #{illnessId}")
+    void deleteIllnessById(@Param("illnessId") long illnessId);
 }

@@ -25,4 +25,6 @@ public class MedicalCardService {
     public Integer addMedicalCard(MedicalCard medicalCard) {
         return medicalMapper.addMedicalCard(medicalCard);
     }
+
+    public void deleteMedicalCardById(long id){ medicalMapper.deleteMedicalCardById(id);}
 }

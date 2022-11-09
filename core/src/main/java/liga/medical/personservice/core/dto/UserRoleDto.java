@@ -12,9 +12,9 @@ import java.util.List;
 @AllArgsConstructor
 public class UserRoleDto {
 
-    private long userId;
+    private final long userId;
 
-    private long roleId;
+    private final long roleId;
 
     public static List<UserRoleDto> fromUser(User user) {
         List<UserRoleDto> userRoleDtoList = new ArrayList<>();

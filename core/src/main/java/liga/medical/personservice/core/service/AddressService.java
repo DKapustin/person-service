@@ -23,7 +23,7 @@ public class AddressService {
         return addressMapper.getAddressById(id);
     }
 
-    public int addAddress(Address address) {
-        return addressMapper.addAddress(address);
-    }
+    public int addAddress(Address address) { return addressMapper.addAddress(address);}
+
+    public void deleteAddressById(long id){ addressMapper.deleteAddressById(id);}
 }

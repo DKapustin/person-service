@@ -1,10 +1,7 @@
 package liga.medical.personservice.core.mapping;
 
 import liga.medical.personservice.core.model.MedicalCard;
-import org.apache.ibatis.annotations.Insert;
-import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Param;
-import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.*;
 
 import java.util.List;
 
@@ -22,4 +19,7 @@ public interface MedicalCardMapper {
     @Insert("INSERT INTO medical.medical_card (id, client_status, med_status, registry_dt, comment) " +
             "VALUES (#{id}, #{clientStatus}, #{medStatus}, #{registryDt}, #{comment})")
     int addMedicalCard(MedicalCard medicalCard);
+
+    @Delete("DELETE FROM medical.medical_card WHERE id = #{medicalCardId}")
+    void deleteMedicalCardById(@Param("medicalCardId") long medicalCardId);
 }
